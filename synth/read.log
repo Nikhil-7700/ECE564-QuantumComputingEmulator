@@ -1,0 +1,106 @@
+#------------------------------------------------------------
+#
+# Basic Synthesis Script (TCL format)
+#                                  
+# Revision History                
+#   1/15/03  : Author Shane T. Gehring - from class example
+#   2/09/07  : Author Zhengtao Yu      - from class example
+#   12/14/07 : Author Ravi Jenkal      - updated to 180 nm & tcl
+#
+#------------------------------------------------------------
+#---------------------------------------------------------
+# Read in Verilog file and map (synthesize) onto a generic
+# library.
+# MAKE SURE THAT YOU CORRECT ALL WARNINGS THAT APPEAR
+# during the execution of the read command are fixed 
+# or understood to have no impact.
+# ALSO CHECK your latch/flip-flop list for unintended 
+# latches                                            
+#---------------------------------------------------------
+read_verilog -rtl $::env(RTL_FILES)
+Loading db file '/mnt/coe/workspace/ece/ece720-common/tech/nangate/NangateOpenCellLibrary_PDKv1_2_v2008_10/liberty/520/NangateOpenCellLibrary_PDKv1_2_v2008_10_slow_nldm.db'
+Loading db file '/mnt/apps/public/COE/synopsys_apps/syn/T-2022.03-SP4/libraries/syn/dw_foundation.sldb'
+Loading db file '/mnt/apps/public/COE/synopsys_apps/syn/T-2022.03-SP4/libraries/syn/gtech.db'
+Loading db file '/mnt/apps/public/COE/synopsys_apps/syn/T-2022.03-SP4/libraries/syn/standard.sldb'
+  Loading link library 'NangateOpenCellLibrary_PDKv1_2_v2008_10_slow_nldm'
+  Loading link library 'gtech'
+Loading verilog file '/mnt/ncsudrive/p/pbhimav/564/project/564_Project/rtl/dut.v'
+Running PRESTO HDLC
+Compiling source file /mnt/ncsudrive/p/pbhimav/564/project/564_Project/rtl/dut.v
+Opening include file ../testbench//defines.vh
+Warning:  /mnt/ncsudrive/p/pbhimav/564/project/564_Project/rtl/dut.v:994: signed to unsigned assignment occurs. (VER-318)
+Warning: Could not open default SVF file /mnt/ncsudrive/p/pbhimav/564/project/564_Project/synthesis/svf/default.svf for writing.
+
+Statistics for case statements in always block at line 182 in file
+	'/mnt/ncsudrive/p/pbhimav/564/project/564_Project/rtl/dut.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           204            |     no/auto      |
+|           225            |    auto/auto     |
+===============================================
+
+Statistics for case statements in always block at line 897 in file
+	'/mnt/ncsudrive/p/pbhimav/564/project/564_Project/rtl/dut.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           899            |    auto/auto     |
+|           906            |    auto/auto     |
+|           913            |    auto/auto     |
+|           920            |    auto/auto     |
+|           928            |    auto/auto     |
+|           935            |    auto/auto     |
+|           947            |    auto/auto     |
+|           954            |    auto/auto     |
+|           962            |    auto/auto     |
+|           968            |    auto/auto     |
+|           980            |    auto/auto     |
+|           986            |    auto/auto     |
+===============================================
+
+Statistics for case statements in always block at line 1000 in file
+	'/mnt/ncsudrive/p/pbhimav/564/project/564_Project/rtl/dut.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           1003           |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+	in routine MyDesign line 169 in file
+		'/mnt/ncsudrive/p/pbhimav/564/project/564_Project/rtl/dut.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|  current_state_reg  | Flip-flop |   8   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine MyDesign line 897 in file
+		'/mnt/ncsudrive/p/pbhimav/564/project/564_Project/rtl/dut.v'.
+===================================================================================================
+|              Register Name              |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===================================================================================================
+|                  m_reg                  | Flip-flop |  64   |  Y  | N  | N  | N  | N  | N  | N  |
+|                  q_reg                  | Flip-flop |  64   |  Y  | N  | N  | N  | N  | N  | N  |
+|                 r2_reg                  | Flip-flop |  64   |  Y  | N  | N  | N  | N  | N  | N  |
+|          state_vector_cnt_reg           | Flip-flop |  64   |  Y  | N  | N  | N  | N  | N  | N  |
+| q_state_output_sram_write_enable_r_reg  | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+| q_state_output_sram_write_address_r_reg | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|  q_state_output_sram_write_data_r_reg   | Flip-flop |  128  |  Y  | N  | N  | N  | N  | N  | N  |
+|   scratchpad_sram_write_address_r_reg   | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|              accum_ip_reg               | Flip-flop |  128  |  Y  | N  | N  | N  | N  | N  | N  |
+|                 r1_reg                  | Flip-flop |  64   |  Y  | N  | N  | N  | N  | N  | N  |
+|   scratchpad_sram_read_address_r_reg    | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|   scratchpad_sram_write_enable_r_reg    | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|    scratchpad_sram_write_data_r_reg     | Flip-flop |  128  |  Y  | N  | N  | N  | N  | N  | N  |
+|  q_state_input_sram_read_address_r_reg  | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|                m_cnt_reg                | Flip-flop |  64   |  Y  | N  | N  | N  | N  | N  | N  |
+|     q_gates_sram_read_address_r_reg     | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+===================================================================================================
+Presto compilation completed successfully.
+Current design is now '/mnt/ncsudrive/p/pbhimav/564/project/564_Project/rtl/MyDesign.db:MyDesign'
+Loaded 2 designs.
+Current design is 'MyDesign'.
+MyDesign DW_fp_mac_inst
